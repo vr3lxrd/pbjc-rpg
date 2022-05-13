@@ -31,7 +31,6 @@ public class Inventario : MonoBehaviour
 
     public bool AddItem(Item itemToAdd)
     {
-        print(itemToAdd);
         for (int i = 0; i < items.Length; i++)
         {
             if(items[i] != null && items[i].tipoItem == itemToAdd.tipoItem && itemToAdd.empilhavel == true)
@@ -47,6 +46,9 @@ public class Inventario : MonoBehaviour
             {
                 items[i] = Instantiate(itemToAdd);
                 items[i].quantidade = 1;
+                Slot slotScript = slots[i].gameObject.GetComponent<Slot>();
+                Text quantidadeTexto = slotScript.qtdTexto;
+                quantidadeTexto.text = "1";
                 itemImagens[i].sprite = itemToAdd.sprite;
                 itemImagens[i].enabled = true;
                 return true;

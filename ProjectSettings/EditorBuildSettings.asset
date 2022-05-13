@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Lab-RPGSetup.unity
+    guid: b3c65978d18587b4a83a1475652b3184
+  - enabled: 1
+    path: Assets/Scenes/BattleScene.unity
+    guid: fc437964db5cebf4c859fa14bc09f7ce
   m_configObjects: {}

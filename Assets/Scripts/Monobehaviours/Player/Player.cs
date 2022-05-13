@@ -10,6 +10,8 @@ public class Player : Caractere
     Inventario inventario;
     public HealthBar healthBarPrefab;        // referência ao objeto prefab da HealthBar
     HealthBar healthBar;
+    public Battle battlePrefab;
+    Battle battleUI;
     public MovimentoPlayer movimentoPlayer;
 
     void Start()
@@ -18,6 +20,7 @@ public class Player : Caractere
         pontosDano.valor = inicioPontosDano;
         healthBar = Instantiate(healthBarPrefab);
         healthBar.caractere = this;
+        movimentoPlayer.movimentoEnabled = true;
     
     }
 
@@ -72,13 +75,14 @@ public class Player : Caractere
         var brain = (camera == null) ? null : camera.GetComponent<CinemachineBrain>();
         var vcam = (brain == null) ? null : brain.ActiveVirtualCamera as CinemachineVirtualCamera;
         Enemy inimigo = enemy.GetComponent<Enemy>();
+        battleUI = Instantiate(battlePrefab);
         movimentoPlayer.movimentoEnabled = false;
         vcam.m_Lens.OrthographicSize = 2;
         vcam.Follow = enemy.transform;
         vcam.LookAt = enemy.transform;
     }
 
-    void exitBattle()
+    public void exitBattle()
     {
         var camera = Camera.main;
         var brain = (camera == null) ? null : camera.GetComponent<CinemachineBrain>();
@@ -86,19 +90,23 @@ public class Player : Caractere
         movimentoPlayer.movimentoEnabled = true;
         vcam.m_Lens.OrthographicSize = 3.75f;
         vcam.Follow = this.transform;
-        vcam.LookAt = this.transform;
     }
 
-    public void attack(GameObject enemy, PontosDano pontosDano)
+    public void attack()
     {
+        
         pontosDano.valor = pontosDano.valor - 1;
-        GameObject.Destroy(enemy);
+        //GameObject.Destroy(enemy);
         exitBattle();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-
+        if (pontosDano.valor <= 0)
+        {
+            print("Game Over");
+            SceneManager.LoadScene(2);
+        }
     }
 }

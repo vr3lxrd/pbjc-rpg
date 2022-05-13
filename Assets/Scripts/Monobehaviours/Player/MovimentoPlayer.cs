@@ -6,8 +6,7 @@ public class MovimentoPlayer : MonoBehaviour
 {
     public float VelocidadeMovimento = 3.0f;  // equivale ao impulso a ser dado ao player
     Vector2 Movimento = new Vector2();
-    public bool movimentoEnabled = true;       // detectar movimento pelo teclado
-
+    public bool movimentoEnabled = true;       
     Animator animator;                        // guarda a componente do controlador de animacao // guarda o nome do parametro do animador
     Rigidbody2D rb2D;                         // guarda a componente de corpo rigido do player
 
