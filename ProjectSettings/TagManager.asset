@@ -17,9 +17,9 @@ TagManager:
   - Bloqueio
   - Consumiveis
   - Inimigos
-  - 
-  - 
-  - 
+  - Piso
+  - Objetos
+  - Lago
   - 
   - 
   - 
@@ -44,15 +44,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Piso
-    uniqueID: 1043864365
+  - name: Caracteres
+    uniqueID: 3083499997
     locked: 0
   - name: Objetos
     uniqueID: 2036852129
     locked: 0
+  - name: Piso
+    uniqueID: 1043864365
+    locked: 0
   - name: Lago
     uniqueID: 4105561401
-    locked: 0
-  - name: Caracteres
-    uniqueID: 3083499997
     locked: 0
