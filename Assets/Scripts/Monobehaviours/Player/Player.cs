@@ -10,8 +10,6 @@ public class Player : Caractere
     Inventario inventario;
     public HealthBar healthBarPrefab;        // referência ao objeto prefab da HealthBar
     HealthBar healthBar;
-    public Battle battlePrefab;
-    Battle battleUI;
     public MovimentoPlayer movimentoPlayer;
 
     void Start()
@@ -36,9 +34,11 @@ public class Player : Caractere
                 switch (danoObjeto.tipoItem)
                 {
                     case Item.TipoItem.MOEDA:
+                        AjusteDanoPlayer(danoObjeto.quantidade);
                         DeveDesaparecer = inventario.AddItem(danoObjeto);
                         break;
                     case Item.TipoItem.HEALTH:
+                        inventario.AddItem(danoObjeto);
                         DeveDesaparecer = AjustePontosDano(danoObjeto.quantidade);
                         break;
                     default:
@@ -53,9 +53,14 @@ public class Player : Caractere
         else if (collision.gameObject.CompareTag("Inimigo"))
         {
             GameObject enemy = collision.gameObject;
-            enterBattle(enemy, pontosDano);
             print("Encontrou com:" + enemy);
         }
+    }
+
+    public void AjusteDanoPlayer(int quantidade)
+    {
+        playerDamage += quantidade;
+        PlayerPrefs.SetInt("playerDamage", playerDamage);
     }
 
     public bool AjustePontosDano(int quantidade)
@@ -63,41 +68,17 @@ public class Player : Caractere
         if (pontosDano.valor < MaxPontosDano)
         {
             pontosDano.valor += quantidade;
-            print("Ajustando PD por: " + quantidade + ". Novo Valor = " + pontosDano.valor);
+            PlayerPrefs.SetFloat("playerHP", pontosDano.valor);
+            return true;
+        }
+        else if (pontosDano.valor == MaxPontosDano)
+        {
+            MaxPontosDano += quantidade;
+            pontosDano.valor += quantidade;
+            PlayerPrefs.SetFloat("playerHP", pontosDano.valor);
             return true;
         }
         else return false;
-    }
-
-    public void enterBattle(GameObject enemy, PontosDano pontosDano)
-    {
-        var camera = Camera.main;
-        var brain = (camera == null) ? null : camera.GetComponent<CinemachineBrain>();
-        var vcam = (brain == null) ? null : brain.ActiveVirtualCamera as CinemachineVirtualCamera;
-        Enemy inimigo = enemy.GetComponent<Enemy>();
-        battleUI = Instantiate(battlePrefab);
-        movimentoPlayer.movimentoEnabled = false;
-        vcam.m_Lens.OrthographicSize = 2;
-        vcam.Follow = enemy.transform;
-        vcam.LookAt = enemy.transform;
-    }
-
-    public void exitBattle()
-    {
-        var camera = Camera.main;
-        var brain = (camera == null) ? null : camera.GetComponent<CinemachineBrain>();
-        var vcam = (brain == null) ? null : brain.ActiveVirtualCamera as CinemachineVirtualCamera;
-        movimentoPlayer.movimentoEnabled = true;
-        vcam.m_Lens.OrthographicSize = 3.75f;
-        vcam.Follow = this.transform;
-    }
-
-    public void attack()
-    {
-        
-        pontosDano.valor = pontosDano.valor - 1;
-        //GameObject.Destroy(enemy);
-        exitBattle();
     }
 
     // Update is called once per frame

@@ -182,6 +182,7 @@ MonoBehaviour:
   pontosDano: {fileID: 11400000, guid: 330b4eb2223971449941550f4e78c641, type: 2}
   inicioPontosDano: 5
   MaxPontosDano: 5
+  playerDamage: 2
   inventarioPrefab: {fileID: 674924101829999407, guid: 6e8fe92ce12c5644da0003c00a117ffd, type: 3}
   healthBarPrefab: {fileID: 6822985813128811915, guid: b99bdb9c9aba3054d8d79e032d2a3429, type: 3}
   battlePrefab: {fileID: 7609266396688418179, guid: d124e7d966247b745a5032ab32cd1e67, type: 3}

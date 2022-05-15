@@ -17,10 +17,11 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(caractere != null)
+        maxPontosDano = caractere.MaxPontosDano;
+        if (caractere != null)
         {
             medidorImagem.fillAmount = pontosDano.valor / maxPontosDano;
-            pdTexto.text = "PD: " + (medidorImagem.fillAmount * 100);
+            pdTexto.text = "PD:" + pontosDano.valor + "/" + maxPontosDano;
         }
     }
 }

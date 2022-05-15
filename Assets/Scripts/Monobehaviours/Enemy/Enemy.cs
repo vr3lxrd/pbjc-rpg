@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
 
     public int maxHealthPoints;
     public int healthPoints;
+    public int damage;
 
     // Start is called before the first frame update
     void Start()
@@ -22,10 +23,6 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (this.healthPoints <= 0)
-        {
-            print("Morreu");
-            GameObject.Destroy(gameObject);
-        }
+       
     }
 }
