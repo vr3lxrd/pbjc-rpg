@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ef2a29ad54b15547a3c6a2422af2922, type: 3}
-  m_Name: Coracao
+  m_Name: Tomate
   m_EditorClassIdentifier: 
-  NomeObjeto: Coracao
-  sprite: {fileID: -8843976880988234773, guid: 6ec842204aa5e614887418ae96e45edf, type: 3}
+  NomeObjeto: Tomate
+  sprite: {fileID: 2134584563556110807, guid: 6e042c5af18bd14489974e2602af6863, type: 3}
   quantidade: 1
   empilhavel: 1
   tipoItem: 1

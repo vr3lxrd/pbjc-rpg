@@ -19,7 +19,8 @@ public class Player : Caractere
         healthBar = Instantiate(healthBarPrefab);
         healthBar.caractere = this;
         movimentoPlayer.movimentoEnabled = true;
-    
+        PlayerPrefs.SetFloat("playerHP", inicioPontosDano);
+        PlayerPrefs.SetInt("actualScene", SceneManager.GetActiveScene().buildIndex);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -33,13 +34,23 @@ public class Player : Caractere
                 print("Acertou: " + danoObjeto.NomeObjeto);
                 switch (danoObjeto.tipoItem)
                 {
-                    case Item.TipoItem.MOEDA:
+                    case Item.TipoItem.TOMATE:
                         AjusteDanoPlayer(danoObjeto.quantidade);
                         DeveDesaparecer = inventario.AddItem(danoObjeto);
+                        int moedasAtual = PlayerPrefs.GetInt("tomates", 0);
+                        PlayerPrefs.SetInt("tomates", moedasAtual + 1);
                         break;
-                    case Item.TipoItem.HEALTH:
+                    case Item.TipoItem.BATATA:
                         inventario.AddItem(danoObjeto);
                         DeveDesaparecer = AjustePontosDano(danoObjeto.quantidade);
+                        int coracaoAtual = PlayerPrefs.GetInt("batata", 0);
+                        PlayerPrefs.SetInt("batata", coracaoAtual + 1);
+                        break;
+                    case Item.TipoItem.BETERRABA:
+                        inventario.AddItem(danoObjeto);
+                        DeveDesaparecer = AjustePontosDano(danoObjeto.quantidade);
+                        int beterrabaAtual = PlayerPrefs.GetInt("beterraba", 0);
+                        PlayerPrefs.SetInt("beterraba", beterrabaAtual + 1);
                         break;
                     default:
                         break;
@@ -52,8 +63,11 @@ public class Player : Caractere
         }
         else if (collision.gameObject.CompareTag("Inimigo"))
         {
-            GameObject enemy = collision.gameObject;
-            print("Encontrou com:" + enemy);
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            if (enemy.enemyName == "abobora")
+            {
+                SceneManager.LoadScene(11);
+            }
         }
     }
 
