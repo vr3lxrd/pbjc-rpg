@@ -2336,6 +2336,7 @@ MonoBehaviour:
   itemDropdown: {fileID: 2054998558}
   attackButton: {fileID: 285153208}
   healButton: {fileID: 1532034023}
+  runButton: {fileID: 1484992372}
 --- !u!4 &1726536439
 Transform:
   m_ObjectHideFlags: 0
