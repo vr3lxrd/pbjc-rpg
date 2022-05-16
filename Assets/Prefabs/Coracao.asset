@@ -15,5 +15,5 @@ MonoBehaviour:
   NomeObjeto: Coracao
   sprite: {fileID: -8843976880988234773, guid: 6ec842204aa5e614887418ae96e45edf, type: 3}
   quantidade: 1
-  empilhavel: 0
+  empilhavel: 1
   tipoItem: 1
