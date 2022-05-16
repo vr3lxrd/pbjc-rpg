@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1118921454415549073}
   - component: {fileID: 7765358642385255749}
   - component: {fileID: 8471357035504061768}
+  - component: {fileID: 296468490306711142}
   m_Layer: 6
   m_Name: PlayerO
   m_TagString: Player
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1211467299
-  m_SortingLayer: 4
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 2585874796098763323, guid: 8fbfafbc6bfbfd848afaed813cae7e1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -185,5 +186,16 @@ MonoBehaviour:
   playerDamage: 2
   inventarioPrefab: {fileID: 674924101829999407, guid: 6e8fe92ce12c5644da0003c00a117ffd, type: 3}
   healthBarPrefab: {fileID: 6822985813128811915, guid: b99bdb9c9aba3054d8d79e032d2a3429, type: 3}
-  battlePrefab: {fileID: 7609266396688418179, guid: d124e7d966247b745a5032ab32cd1e67, type: 3}
   movimentoPlayer: {fileID: 1118921454415549073}
+--- !u!114 &296468490306711142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23236787246126630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e75e09009d881439d2310dee7a2018, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
