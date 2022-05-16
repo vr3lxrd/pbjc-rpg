@@ -24,6 +24,7 @@ public class BattleScript : MonoBehaviour
 
     public Button attackButton;
     public Button healButton;
+    public Button runButton;
 
     void Start()
     {
@@ -45,6 +46,7 @@ public class BattleScript : MonoBehaviour
 
     void botTurn()
     {
+        runButton.interactable = false;
         if (enemyHP <= 0)
         {
             endBattle();
