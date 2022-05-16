@@ -15,7 +15,7 @@ public class Player : Caractere
     void Start()
     {
         inventario = Instantiate(inventarioPrefab);
-        pontosDano.valor = inicioPontosDano;
+        pontosDano.valor = PlayerPrefs.GetFloat("playerHP") == null ? PlayerPrefs.GetFloat("playerHP") : inicioPontosDano;
         healthBar = Instantiate(healthBarPrefab);
         healthBar.caractere = this;
         movimentoPlayer.movimentoEnabled = true;
