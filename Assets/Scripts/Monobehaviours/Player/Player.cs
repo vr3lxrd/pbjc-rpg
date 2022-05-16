@@ -36,10 +36,14 @@ public class Player : Caractere
                     case Item.TipoItem.MOEDA:
                         AjusteDanoPlayer(danoObjeto.quantidade);
                         DeveDesaparecer = inventario.AddItem(danoObjeto);
+                        int moedasAtual = PlayerPrefs.GetInt("moedas", 0);
+                        PlayerPrefs.SetInt("moedas", moedasAtual + 1);
                         break;
                     case Item.TipoItem.HEALTH:
                         inventario.AddItem(danoObjeto);
                         DeveDesaparecer = AjustePontosDano(danoObjeto.quantidade);
+                        int coracaoAtual = PlayerPrefs.GetInt("coracao", 0);
+                        PlayerPrefs.SetInt("coracao", coracaoAtual + 1);
                         break;
                     default:
                         break;

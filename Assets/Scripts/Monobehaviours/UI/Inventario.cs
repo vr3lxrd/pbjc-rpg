@@ -6,7 +6,7 @@ public class Inventario : MonoBehaviour
     public GameObject slotPrefab;            // objeto que recebe o prefab Slot
     public const int numSlots = 5;           // numero fixo de slots
     Image[] itemImagens = new Image[numSlots];
-    Item[] items = new Item[numSlots];
+    public Item[] items = new Item[numSlots];
     GameObject[] slots = new GameObject[numSlots];  
 
     void Start()
