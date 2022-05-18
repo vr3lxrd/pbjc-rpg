@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VelocidadeMovimento: 3
+  movimentoEnabled: 1
 --- !u!95 &7765358642385255749
 Animator:
   serializedVersion: 3
@@ -180,6 +181,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pontosDano: {fileID: 11400000, guid: 330b4eb2223971449941550f4e78c641, type: 2}
   inicioPontosDano: 0
-  MaxPontosDano: 5
+  maxPontosDano: 20
+  playerDamage: 0
   inventarioPrefab: {fileID: 674924101829999407, guid: 6e8fe92ce12c5644da0003c00a117ffd, type: 3}
   healthBarPrefab: {fileID: 6822985813128811915, guid: b99bdb9c9aba3054d8d79e032d2a3429, type: 3}
+  movimentoPlayer: {fileID: 0}

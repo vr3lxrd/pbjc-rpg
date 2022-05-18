@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class BattleScript : MonoBehaviour
 {
     public Enemy enemy;
+    public Player player;
     int enemyHP;
     string enemyName;
     int actualScene;
@@ -28,7 +29,6 @@ public class BattleScript : MonoBehaviour
 
     void Start()
     {
-        print(PlayerPrefs.GetInt("moedas"));
         playerDamage = PlayerPrefs.GetInt("playerDamage", 1);
         playerHP = PlayerPrefs.GetFloat("playerHP", 5);
         actualScene = PlayerPrefs.GetInt("actualScene");
@@ -51,13 +51,13 @@ public class BattleScript : MonoBehaviour
             endBattle();
         }
         float random = Random.Range(1, 3);
-        print(random);
         if (random == 1)
         {
             print("O inimigo atacou!");
             playerHP -= enemy.damage;
             textPlayerHP.text = setHPPlayer(playerHP);
             PlayerPrefs.SetFloat("playerHP", playerHP);
+            player.pontosDano.valor = playerHP;
         }
         else
         {
@@ -72,7 +72,8 @@ public class BattleScript : MonoBehaviour
     void SetupBattle(float playerHP, int playerDamage)
     {
         itemDropdown.AddOptions(new List<string> {
-            "Tomates (" + PlayerPrefs.GetInt("tomates") + ")"
+            "Tomates (" + PlayerPrefs.GetInt("tomates") + ")",
+            "Trigos (" + PlayerPrefs.GetInt("trigos") + ")"
         });
         textBossName.text = "Boss: " + enemyName;
         textBossHP.text = "Vida: " + enemyHP;
@@ -89,6 +90,7 @@ public class BattleScript : MonoBehaviour
     }
     public void Heal()
     {
+        int healValue;
         if (itemDropdown.value == 0)
         {
             int tomatesAtual = PlayerPrefs.GetInt("tomates");
@@ -97,8 +99,21 @@ public class BattleScript : MonoBehaviour
             itemDropdown.AddOptions(new List<string> {
             "Tomates (" + PlayerPrefs.GetInt("tomates") + ")"
         });
+            healValue = 5;
         }
-        playerHP += playerDamage;
+        else
+        {
+            int tomatesAtual = PlayerPrefs.GetInt("trigos");
+            PlayerPrefs.SetInt("trigos", tomatesAtual - 1);
+            itemDropdown.ClearOptions();
+            itemDropdown.AddOptions(new List<string> {
+            "Trigos (" + PlayerPrefs.GetInt("trigos") + ")"
+        });
+            healValue = 10;
+        }
+
+        playerHP += healValue;
+        player.pontosDano.valor = playerHP;
         textPlayerHP.text = setHPPlayer(playerHP);
         PlayerPrefs.SetFloat("playerHP", playerHP);
         playerTurn = false;
@@ -121,6 +136,7 @@ public class BattleScript : MonoBehaviour
     {
         print("Boss morto!");
         PlayerPrefs.SetInt("deadBosses", 1);
+        print("Actual Scene: " + actualScene);
         SceneManager.LoadScene(actualScene);
     }
 
@@ -131,6 +147,10 @@ public class BattleScript : MonoBehaviour
         {
             print("Game Over");
             SceneManager.LoadScene("Start");
+        }
+        if (PlayerPrefs.GetInt("tomates") == 0 && PlayerPrefs.GetInt("trigos") == 0)
+        {
+            healButton.interactable = false;
         }
         if (playerTurn)
         {
