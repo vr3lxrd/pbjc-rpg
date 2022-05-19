@@ -54,7 +54,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 0
+  m_Spacing: -23.81
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 1795962130195842832}
   - component: {fileID: 2806849898850674714}
   - component: {fileID: 674924101829999407}
+  - component: {fileID: 135654682234359931}
   m_Layer: 5
   m_Name: InventarioO
   m_TagString: Untagged
@@ -176,3 +177,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotPrefab: {fileID: 2126900766120678965, guid: f4eafdd24b0fce9479616a63042493d2, type: 3}
+--- !u!114 &135654682234359931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8728929747544567875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8802c25d21ec81242b442c1bcd7ede4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

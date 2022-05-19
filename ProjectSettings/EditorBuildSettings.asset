@@ -6,6 +6,48 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/FarmMap.unity
+    guid: a522c99e7df0bc241a02f09a240cfd13
+  - enabled: 1
+    path: Assets/Scenes/Lab-RPGSetup.unity
+    guid: b3c65978d18587b4a83a1475652b3184
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/BossBattle.unity
+    guid: 4b76a0f3e89602c449ace7ce43eeea03
+  - enabled: 1
+    path: Assets/Scenes/CityMap.unity
+    guid: 517b420155dc4294ca459256df2b504a
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 13379bda54b1bf543a7ee44447cd2019
+  - enabled: 1
+    path: Assets/Scenes/Defeat.unity
+    guid: 59ef101ddf337ae4e8ccab1a45bf6ded
+  - enabled: 1
+    path: Assets/Scenes/EndGame.unity
+    guid: 5991507a7b116e949a41d75abc247820
+  - enabled: 1
+    path: Assets/Scenes/ForestMap.unity
+    guid: 67c918d18a7c3e94baa0e1b545addc1e
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 6bec83337981aac4c90ae6e958bc2348
+  - enabled: 1
+    path: Assets/Scenes/LabMap.unity
+    guid: 211597f05350b704cb752984427fe907
+  - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: 1c59a01e979188d43aff18af80986a3f
+  - enabled: 0
+    path: Assets/Scenes/Battle.unity
+    guid: 33c4e75fa0e3f8e4aa3eca0fdf3ad170
+  - enabled: 1
+    path: Assets/Scenes/BossAbobora.unity
+    guid: ae6f3cb96f87d0940bb53e8da5d4d341
+  - enabled: 1
+    path: Assets/Scenes/BossBrocolis.unity
+    guid: 7ca1da88cb67a6344bac1a9d92b2d1a9
   m_configObjects: {}
