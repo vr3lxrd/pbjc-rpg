@@ -51,7 +51,6 @@ public class Player : Caractere
             pontosDano.valor = PlayerPrefs.GetFloat("playerHP");
         }
         PlayerPrefs.SetInt("playerDamage", playerDamage);
-        PlayerPrefs.SetInt("actualScene", SceneManager.GetActiveScene().buildIndex);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -100,6 +99,7 @@ public class Player : Caractere
         }
         else if (collision.gameObject.CompareTag("Inimigo"))
         {
+            PlayerPrefs.SetInt("actualScene", SceneManager.GetActiveScene().buildIndex);
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             int deadBosses = PlayerPrefs.GetInt("aboboraFight", 0);
             print("deadBosses: " + deadBosses);
@@ -107,6 +107,11 @@ public class Player : Caractere
             {
                 PlayerPrefs.SetInt("aboboraFight", 1);
                 SceneManager.LoadScene(11);
+            }
+            else if (enemy.enemyName == "brocolis" && deadBosses == 1)
+            {
+                PlayerPrefs.SetInt("brocolisFight", 1);
+                SceneManager.LoadScene(12);
             }
         }
     }

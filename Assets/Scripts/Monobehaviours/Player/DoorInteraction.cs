@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class DoorInteraction : MonoBehaviour
 {
+
+    public GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +25,7 @@ public class DoorInteraction : MonoBehaviour
         if (other.CompareTag("Door"))//verifica a tag com qual meu player interagiu
         {
             SceneManager.LoadScene("ForestMap");
+            player.gameObject.transform.position = new Vector3(-6, -2, 0);
         }
     }
   

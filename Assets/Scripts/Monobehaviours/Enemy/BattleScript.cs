@@ -135,7 +135,8 @@ public class BattleScript : MonoBehaviour
     void endBattle()
     {
         print("Boss morto!");
-        PlayerPrefs.SetInt("deadBosses", 1);
+        int deadBoss = PlayerPrefs.GetInt("deadBosses", 0);
+        PlayerPrefs.SetInt("deadBosses", deadBoss + 1);
         print("Actual Scene: " + actualScene);
         SceneManager.LoadScene(actualScene);
     }
@@ -161,10 +162,6 @@ public class BattleScript : MonoBehaviour
         {
             attackButton.interactable = false;
             healButton.interactable = false;
-        }
-        if (enemyHP <= 0)
-        {
-            endBattle();
         }
     }
 }

@@ -26,8 +26,17 @@ public class Enemy : MonoBehaviour
         if (PlayerPrefs.GetInt("deadBosses") == 1)
         {
             Enemy expectedEnemy = GetComponent<Enemy>();
-            print(expectedEnemy.enemyName);
+            print("enemy: " + expectedEnemy.enemyName);
             if (expectedEnemy.enemyName == "abobora")
+            {
+                Destroy(expectedEnemy.gameObject);
+            }
+        }
+        else if (PlayerPrefs.GetInt("deadBosses") == 2)
+        {
+            Enemy expectedEnemy = GetComponent<Enemy>();
+            print("enemy: " + expectedEnemy.enemyName);
+            if (expectedEnemy.enemyName == "brocolis")
             {
                 Destroy(expectedEnemy.gameObject);
             }

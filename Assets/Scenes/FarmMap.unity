@@ -581,8 +581,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2036852129
+  m_SortingLayer: 2
   m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -1555,7 +1555,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 22.021557, y: -4.4252725}
+  m_Offset: {x: 22.034904, y: -4.5409427}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1566,7 +1566,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.4778366, y: 0.7639284}
+  m_Size: {x: 3.4511414, y: 0.532588}
   m_EdgeRadius: 0
 --- !u!61 &333348061
 BoxCollider2D:
@@ -1581,7 +1581,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 21.498901, y: -2.4031866}
+  m_Offset: {x: 21.54784, y: -2.3809423}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1592,7 +1592,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.566969, y: 0.8042636}
+  m_Size: {x: 2.4690933, y: 0.7597749}
   m_EdgeRadius: 0
 --- !u!1 &350827169
 GameObject:
@@ -2058,7 +2058,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667056181}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.97, y: 1.24, z: -10}
+  m_LocalPosition: {x: 15.58, y: -2.89, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2192,11 +2192,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 23236787246126624, guid: 5e7b13ed7334651499df4a0cd7aedf04, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.97
+      value: 15.58
       objectReference: {fileID: 0}
     - target: {fileID: 23236787246126624, guid: 5e7b13ed7334651499df4a0cd7aedf04, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.24
+      value: -2.89
       objectReference: {fileID: 0}
     - target: {fileID: 23236787246126624, guid: 5e7b13ed7334651499df4a0cd7aedf04, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2250,6 +2250,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerOFarmer
       objectReference: {fileID: 0}
+    - target: {fileID: 296468490306711142, guid: 5e7b13ed7334651499df4a0cd7aedf04, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1010047998}
     - target: {fileID: 8471357035504061768, guid: 5e7b13ed7334651499df4a0cd7aedf04, type: 3}
       propertyPath: playerDamage
       value: 20
@@ -23744,7 +23748,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139016508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.97, y: 1.24, z: -10}
+  m_LocalPosition: {x: 15.58, y: -2.89, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1327387864}
