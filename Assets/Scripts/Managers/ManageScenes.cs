@@ -5,10 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class ManageScenes : MonoBehaviour
 {
-   public void LoadOnClick()
+    public void LoadOnClick(int sceneIndex)
     {
-        SceneManager.LoadScene("farmMap");
+        Debug.LogError("as");
+        SceneManager.LoadScene(sceneIndex);
     }
-
-   
+    public void StartMundoGame()
+    {
+        /* Método unity para carga de cena
+         * Pode ser passado no param o nome da cena ou seu index
+         */
+        SceneManager.LoadScene("FarmMap");
+    }
 }
