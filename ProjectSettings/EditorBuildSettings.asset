@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BossAbobora.unity
     guid: ae6f3cb96f87d0940bb53e8da5d4d341
+  - enabled: 1
+    path: Assets/Scenes/BossBrocolis.unity
+    guid: 7ca1da88cb67a6344bac1a9d92b2d1a9
   m_configObjects: {}

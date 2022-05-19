@@ -6,7 +6,7 @@ public class SaveMe : MonoBehaviour
 {
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject); // Mantem gameObject apos load
     }
 
     

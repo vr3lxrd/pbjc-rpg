@@ -10,14 +10,13 @@ public class Player : Caractere
     Inventario inventario;
     public HealthBar healthBarPrefab;        // referência ao objeto prefab da HealthBar
     HealthBar healthBar;
-    public MovimentoPlayer movimentoPlayer;
+    public MovimentoPlayer movimentoPlayer;  // referência ao script de movimento
 
     bool trueOne = false;
     void Awake()
     {
+        // Se tem mais de um player na hierarquia, deixa apenas o primeiro
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        // if there are more than 1 players, then we know that we have more than we need
-        // so find the original one
         if (players.Length > 1)
         {
             foreach (GameObject player in players)
@@ -30,18 +29,20 @@ public class Player : Caractere
         }
         else
         {
-            trueOne = true; // only first one is true one
+            trueOne = true; 
         }
     }
 
     void Start()
     {
+        // Reseta os prefs e inicia os prefabs
         PlayerPrefs.DeleteAll();
         inventario = Instantiate(inventarioPrefab);
         pontosDano.valor = inicioPontosDano;
         healthBar = Instantiate(healthBarPrefab);
         healthBar.caractere = this;
         movimentoPlayer.movimentoEnabled = true;
+        // Setando vida do jogador nas prefs
         if (PlayerPrefs.GetFloat("playerHP", 0) == 0)
         {
             PlayerPrefs.SetFloat("playerHP", inicioPontosDano);
@@ -51,11 +52,11 @@ public class Player : Caractere
             pontosDano.valor = PlayerPrefs.GetFloat("playerHP");
         }
         PlayerPrefs.SetInt("playerDamage", playerDamage);
-        PlayerPrefs.SetInt("actualScene", SceneManager.GetActiveScene().buildIndex);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Sistema de coleta de objetos
         if (collision.gameObject.CompareTag("Coletavel"))
         {
             Item danoObjeto = collision.gameObject.GetComponent<Consumable>().item;
@@ -98,8 +99,10 @@ public class Player : Caractere
                 }   
             }
         }
+        // Sistema de colisão com inimigos para inicio de batalha
         else if (collision.gameObject.CompareTag("Inimigo"))
         {
+            PlayerPrefs.SetInt("actualScene", SceneManager.GetActiveScene().buildIndex);
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             int deadBosses = PlayerPrefs.GetInt("aboboraFight", 0);
             print("deadBosses: " + deadBosses);
@@ -108,15 +111,22 @@ public class Player : Caractere
                 PlayerPrefs.SetInt("aboboraFight", 1);
                 SceneManager.LoadScene(11);
             }
+            else if (enemy.enemyName == "brocolis" && deadBosses == 1)
+            {
+                PlayerPrefs.SetInt("brocolisFight", 1);
+                SceneManager.LoadScene(12);
+            }
         }
     }
 
+    // Aumenta o dano do jogador
     public void AjusteDanoPlayer(int quantidade)
     {
         playerDamage += quantidade;
         PlayerPrefs.SetInt("playerDamage", playerDamage);
     }
 
+    // Aumenta a vida do jogador
     public bool AjustePontosDano(int quantidade)
     {
         if (pontosDano.valor < maxPontosDano)
@@ -135,7 +145,7 @@ public class Player : Caractere
         else return false;
     }
 
-    // Update is called once per frame
+    // Sistema para desativar UI em cena de boss
     void FixedUpdate()
     {
         if (SceneManager.GetActiveScene().name.Contains("Boss"))

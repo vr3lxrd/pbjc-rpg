@@ -8811,11 +8811,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 23236787246126624, guid: 5e7b13ed7334651499df4a0cd7aedf04, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.32
+      value: 21.06
       objectReference: {fileID: 0}
     - target: {fileID: 23236787246126624, guid: 5e7b13ed7334651499df4a0cd7aedf04, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.51
+      value: -0.47
       objectReference: {fileID: 0}
     - target: {fileID: 23236787246126624, guid: 5e7b13ed7334651499df4a0cd7aedf04, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22373,17 +22373,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 667872544522403407, guid: 4ec06b69ca8c8c44f944d7e2d569b3e7, type: 3}
+      propertyPath: m_Size.x
+      value: 2.1474094
+      objectReference: {fileID: 0}
+    - target: {fileID: 667872544522403407, guid: 4ec06b69ca8c8c44f944d7e2d569b3e7, type: 3}
+      propertyPath: m_Size.y
+      value: 3.0166576
+      objectReference: {fileID: 0}
+    - target: {fileID: 667872544522403407, guid: 4ec06b69ca8c8c44f944d7e2d569b3e7, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.5737047
+      objectReference: {fileID: 0}
+    - target: {fileID: 667872544522403407, guid: 4ec06b69ca8c8c44f944d7e2d569b3e7, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.45200956
+      objectReference: {fileID: 0}
+    - target: {fileID: 667872544522403407, guid: 4ec06b69ca8c8c44f944d7e2d569b3e7, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 667872544522403762, guid: 4ec06b69ca8c8c44f944d7e2d569b3e7, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 667872544522403762, guid: 4ec06b69ca8c8c44f944d7e2d569b3e7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.78
+      value: 23.77
       objectReference: {fileID: 0}
     - target: {fileID: 667872544522403762, guid: 4ec06b69ca8c8c44f944d7e2d569b3e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.76
+      value: -3.55
       objectReference: {fileID: 0}
     - target: {fileID: 667872544522403762, guid: 4ec06b69ca8c8c44f944d7e2d569b3e7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22423,3 +22443,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec06b69ca8c8c44f944d7e2d569b3e7, type: 3}
+--- !u!1 &3355930680542483833 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 667872544522403763, guid: 4ec06b69ca8c8c44f944d7e2d569b3e7, type: 3}
+  m_PrefabInstance: {fileID: 3355930680542483832}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3355930680542483834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3355930680542483833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9247249d4681e3c48a45b8899f4cccac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyName: brocolis
+  enemyHP: 0
+  damage: 0
