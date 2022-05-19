@@ -17,4 +17,8 @@ public class ManageScenes : MonoBehaviour
          */
         SceneManager.LoadScene("FarmMap");
     }
+    public void StartSceneCreditos()
+    {
+        SceneManager.LoadScene("Credits");
+    }
 }
