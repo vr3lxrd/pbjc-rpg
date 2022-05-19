@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthBar : MonoBehaviour
 {
@@ -11,13 +12,15 @@ public class HealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxPontosDano = caractere.MaxPontosDano;
+    
+        maxPontosDano = caractere.maxPontosDano;
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        maxPontosDano = caractere.MaxPontosDano;
+        maxPontosDano = caractere.maxPontosDano;
         if (caractere != null)
         {
             medidorImagem.fillAmount = pontosDano.valor / maxPontosDano;

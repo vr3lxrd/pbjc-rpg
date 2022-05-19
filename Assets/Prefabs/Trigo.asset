@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ef2a29ad54b15547a3c6a2422af2922, type: 3}
-  m_Name: Coracao
+  m_Name: Trigo
   m_EditorClassIdentifier: 
-  NomeObjeto: Coracao
-  sprite: {fileID: -8843976880988234773, guid: 6ec842204aa5e614887418ae96e45edf, type: 3}
+  NomeObjeto: Trigo
+  sprite: {fileID: 8411801333702420389, guid: fcc6f580e68c2394082b4dd1e2f960e5, type: 3}
   quantidade: 1
   empilhavel: 1
-  tipoItem: 1
+  tipoItem: 3
