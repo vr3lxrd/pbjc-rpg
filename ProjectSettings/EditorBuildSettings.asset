@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/FarmMap.unity
+    guid: a522c99e7df0bc241a02f09a240cfd13
   - enabled: 1
     path: Assets/Scenes/Lab-RPGSetup.unity
     guid: b3c65978d18587b4a83a1475652b3184
@@ -30,9 +30,6 @@ EditorBuildSettings:
     path: Assets/Scenes/EndGame.unity
     guid: 5991507a7b116e949a41d75abc247820
   - enabled: 1
-    path: Assets/Scenes/FarmMap.unity
-    guid: a522c99e7df0bc241a02f09a240cfd13
-  - enabled: 1
     path: Assets/Scenes/ForestMap.unity
     guid: 67c918d18a7c3e94baa0e1b545addc1e
   - enabled: 1
@@ -44,7 +41,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Start.unity
     guid: 1c59a01e979188d43aff18af80986a3f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Battle.unity
     guid: 33c4e75fa0e3f8e4aa3eca0fdf3ad170
+  - enabled: 1
+    path: Assets/Scenes/BossAbobora.unity
+    guid: ae6f3cb96f87d0940bb53e8da5d4d341
   m_configObjects: {}

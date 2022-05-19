@@ -67,18 +67,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8b3ba991225fd3742af04d818a473f26, type: 3}
-    m_FontSize: 16
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PD:100
+  m_Text: PD:10/10
 --- !u!1 &2476424629142155877
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,6 +257,7 @@ GameObject:
   - component: {fileID: 8712347302647456714}
   - component: {fileID: 8712347302647456715}
   - component: {fileID: 6822985813128811915}
+  - component: {fileID: 3098156937094847204}
   m_Layer: 5
   m_Name: HealthBarO
   m_TagString: Untagged
@@ -361,6 +362,18 @@ MonoBehaviour:
   caractere: {fileID: 8471357035504061768, guid: 5e7b13ed7334651499df4a0cd7aedf04, type: 3}
   medidorImagem: {fileID: 2688348024618456087}
   pdTexto: {fileID: 777959939585205350}
+--- !u!114 &3098156937094847204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8712347302647456712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8802c25d21ec81242b442c1bcd7ede4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8712347303722995110
 GameObject:
   m_ObjectHideFlags: 0
