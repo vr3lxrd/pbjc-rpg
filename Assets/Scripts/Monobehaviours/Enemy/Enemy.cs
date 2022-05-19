@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Limpa bosses do mapa após morrer em batalha
         if (PlayerPrefs.GetInt("deadBosses") == 1)
         {
             Enemy expectedEnemy = GetComponent<Enemy>();

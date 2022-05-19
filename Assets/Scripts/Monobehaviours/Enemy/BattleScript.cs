@@ -29,6 +29,7 @@ public class BattleScript : MonoBehaviour
 
     void Start()
     {
+        // Setando variaveis de jogador
         playerDamage = PlayerPrefs.GetInt("playerDamage", 1);
         playerHP = PlayerPrefs.GetFloat("playerHP", 5);
         actualScene = PlayerPrefs.GetInt("actualScene");
@@ -43,6 +44,7 @@ public class BattleScript : MonoBehaviour
         playerTurn = true;
     }
 
+    // Função responsável pelas ações dos inimigos
     void botTurn()
     {
         runButton.interactable = false;
@@ -69,6 +71,7 @@ public class BattleScript : MonoBehaviour
 
     }
 
+    // Função que inicializa a UI da batalha
     void SetupBattle(float playerHP, int playerDamage)
     {
         itemDropdown.AddOptions(new List<string> {
@@ -83,11 +86,12 @@ public class BattleScript : MonoBehaviour
         healButton.interactable = false;
     }
 
-
+    // Fugir
     public void Run()
     {
         SceneManager.LoadScene(actualScene);
     }
+    // Função responsável pelo botão de usar item
     public void Heal()
     {
         int healValue;
@@ -119,6 +123,7 @@ public class BattleScript : MonoBehaviour
         playerTurn = false;
         botTurn();
     }
+    // Função responsável pelo botão de atacar
     public void Attack()
     {
         enemyHP -= playerDamage;
@@ -132,6 +137,7 @@ public class BattleScript : MonoBehaviour
         return "Vida do jogador: " + hp;
     }
 
+    // Função após o boss morrer
     void endBattle()
     {
         print("Boss morto!");
@@ -141,7 +147,7 @@ public class BattleScript : MonoBehaviour
         SceneManager.LoadScene(actualScene);
     }
 
-    // Update is called once per frame
+    // Verifica eligibilidade dos botões e vida do jogador
     void Update()
     {
         if (playerHP <= 0)
